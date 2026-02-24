@@ -1,221 +1,174 @@
-.chat-row {
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 12px;
-}
-
-.chat-row-user {
-  flex-direction: row-reverse;
-}
-
-.chat-row-ai {
-  flex-direction: row;
-}
-
-.chat-avatar {
-  width: 36px;
-  height: 36px;
-  margin: 0 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.user-avatar img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 2px solid #d1e7ff;
-}
-
-.ai-avatar .robot-icon {
-  width: 36px;
-  height: 36px;
-}
-
-.user-bubble {
-  background: #e6f7ff;
-  color: #0057a3;
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 18px;
-  border-top-left-radius: 18px;
-  border-bottom-left-radius: 18px;
-}
-
-.ai-bubble {
-  background: #f7e9fa;
-  color: #7c2b7a;
-  border-bottom-left-radius: 4px;
-  border-top-right-radius: 18px;
-  border-top-left-radius: 18px;
-  border-bottom-right-radius: 18px;
-}
-.chat-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-}
-
-.robot-icon {
-  width: 36px;
-  height: 36px;
-  margin-right: 12px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.robot-thinking {
-  animation: robot-bounce 1s infinite;
-}
-
-@keyframes robot-bounce {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-
-.robot-thinking-dots {
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.2rem;
-  color: #7c2b7a;
-  letter-spacing: 2px;
-}
-
-.chat-time {
-  font-size: 0.85rem;
-  color: #888;
-  margin-top: 4px;
-}
 
 body {
   background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
   min-height: 100vh;
-  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 
-.chat-container {
+.ChatApp {
   max-width: 480px;
   margin: 40px auto;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  padding: 24px 18px 16px 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.12);
   display: flex;
   flex-direction: column;
-  min-height: 600px;
+  height: 80vh;
+  overflow: hidden;
 }
 
-.chat-header {
+.ChatHeader {
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 18px 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.ChatBody {
+  flex: 1;
+  padding: 24px 16px;
+  overflow-y: auto;
+  background: #f7fafd;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ChatBubble {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2px;
+}
+
+.UserBubble {
+  flex-direction: row-reverse;
+}
+
+.AIBubble {
+  flex-direction: row;
+}
+
+.Avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  font-size: 1.5rem;
+  margin: 0 8px;
 }
 
-.chat-logo {
-  width: 36px;
-  height: 36px;
-  margin-right: 12px;
-}
-
-.chat-title {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #0057a3;
-  letter-spacing: 0.5px;
-}
-
-.chat-box {
-  flex: 1;
-  overflow-y: auto;
-  margin-bottom: 16px;
-  display: flex;
-  flex-direction: column;
-}
-
-.chat-bubble {
-  padding: 14px 22px;
-  border-radius: 22px;
-  margin-bottom: 12px;
-  max-width: 75%;
-  font-size: 1.05rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-}
-
-.user-bubble {
-  background: #d1e7ff;
-  align-self: flex-end;
-  color: #0057a3;
-  border-bottom-right-radius: 4px;
-}
-
-.ai-bubble {
-  background: #f7e9fa;
-  align-self: flex-start;
-  color: #7c2b7a;
-  border-bottom-left-radius: 4px;
-}
-
-.chat-sender {
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-bottom: 2px;
-  color: #888;
-}
-
-.chat-text {
-  font-size: 1.05rem;
+.BubbleText {
+  max-width: 70%;
+  padding: 12px 18px;
+  border-radius: 18px;
+  font-size: 1.08rem;
+  line-height: 1.5;
   word-break: break-word;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.chat-input-area {
+.UserBubble .BubbleText {
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 18px;
+}
+
+.AIBubble .BubbleText {
+  background: #f1f0f0;
+  color: #222;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 18px;
+}
+
+.ChatInputBar {
   display: flex;
-  gap: 8px;
-  margin-top: 8px;
+  padding: 16px;
+  background: #f7fafd;
+  border-top: 1px solid #e0e0e0;
 }
 
-.chat-input {
+.ChatInputBar input {
   flex: 1;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 1.05rem;
-  background: #f9f9f9;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid #cfd8dc;
+  font-size: 1rem;
+  outline: none;
+  margin-right: 10px;
+  background: #fff;
   transition: border 0.2s;
 }
 
-.chat-input:focus {
-  border: 1.5px solid #0057a3;
-  outline: none;
+.ChatInputBar input:focus {
+  border: 1.5px solid #43cea2;
 }
 
-.chat-send-btn {
-  background: linear-gradient(135deg, #0057a3 0%, #7c2b7a 100%);
+.ChatInputBar button {
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
   color: #fff;
   border: none;
-  border-radius: 10px;
-  padding: 0 22px;
-  font-size: 1.15rem;
+  border-radius: 20px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(124,43,122,0.08);
   transition: background 0.2s;
 }
 
-.chat-send-btn:hover {
-  background: linear-gradient(135deg, #7c2b7a 0%, #0057a3 100%);
+.ChatInputBar button:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
 }
 
-.chat-error {
+.ErrorMsg {
   color: #d32f2f;
-  margin-top: 12px;
-  text-align: center;
-  font-weight: 500;
+  background: #fff0f0;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin: 8px 0;
+  font-size: 1rem;
+  text-align: left;
+  max-width: 70%;
+  align-self: flex-start;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

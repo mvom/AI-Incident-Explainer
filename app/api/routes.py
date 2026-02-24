@@ -2,7 +2,6 @@
 # API Routes
 # -----------------------------
 from fastapi import APIRouter
-import time
 from app.models.schemas import IncidentQuery
 from app.rag.pipeline import answer_question
 
@@ -15,11 +14,8 @@ def explain_incident(query: IncidentQuery):
 	It takes a user's question, retrieves similar incidents,
 	injects context, and generates a human-readable explanation.
 	"""
-	start_time = time.time()
 	response = answer_question(query.question)
-	elapsed = round(time.time() - start_time, 2)
 	return {
 		"question": query.question,
-		"explanation": response,
-		"answer_time_seconds": elapsed
+		"explanation": response
 	}
