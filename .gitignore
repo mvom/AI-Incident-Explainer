@@ -1,0 +1,43 @@
+
+# Python
+__pycache__/
+.venv/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+env/
+venv/
+
+# Node.js
+frontend/frontend/node_modules/
+frontend/frontend/build/
+frontend/frontend/.env
+
+# Coverage
+frontend/frontend/coverage/
+.coverage
+coverage/
+*.cover
+*.coverage
+*.log
+*.log.*
+
+# Docker
+*.docker
+*.dockerfile
+Dockerfile*
+docker-compose*
+
+# Misc
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*.tmp
+*.old
+*.orig
