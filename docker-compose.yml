@@ -12,6 +12,7 @@ services:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
+      - OPENAI_API_KEY=your_open_ai_key
     restart: unless-stopped
 
   frontend:
