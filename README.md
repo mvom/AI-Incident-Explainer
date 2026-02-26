@@ -1,5 +1,46 @@
 # AI Incident Explainer
 
+## Running the App with Docker
+
+You can run the application using Docker or Docker Compose. This is the recommended way to ensure all dependencies are handled automatically.
+
+### Using Docker Compose (Recommended)
+
+1. Make sure you have [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+2. In the project root directory, run:
+
+	```sh
+	docker-compose up --build
+	```
+
+	This will build and start all required services (backend and frontend).
+
+3. The backend API will be available at `http://localhost:8000` and the frontend at `http://localhost:3000` (or as configured in the compose file).
+
+### Using Docker (Manual)
+
+You can also build and run the backend or frontend containers individually:
+
+#### Backend
+
+```sh
+docker build -t ai-incident-backend .
+docker run -p 8000:8000 ai-incident-backend
+```
+
+#### Frontend
+
+```sh
+cd frontend/frontend
+docker build -t ai-incident-frontend .
+docker run -p 3000:3000 ai-incident-frontend
+```
+
+---
+
+...existing content...
+# AI Incident Explainer
+
 ## Overview
 AI Incident Explainer is a full-stack application that leverages Retrieval-Augmented Generation (RAG) to answer questions about industrial incidents using a conversational interface. The backend is built with FastAPI and integrates RAG pipelines, while the frontend provides a user-friendly interface for interaction.
 
@@ -187,4 +228,4 @@ End-to-end tests use FastAPI's TestClient to simulate API requests and validate 
 MIT License
 
 ## Author
-Your Name
+Wilfried Eto
