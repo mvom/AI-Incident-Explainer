@@ -136,7 +136,7 @@ End-to-end tests use FastAPI's TestClient to simulate API requests and validate 
 MIT License
 
 ## Author
-Your Name
+Wilfried Mvomo Eto
 
 # AI Incident Explainer
 
@@ -228,4 +228,4 @@ End-to-end tests use FastAPI's TestClient to simulate API requests and validate 
 MIT License
 
 ## Author
-Wilfried Eto
+Wilfried Mvomo Eto
